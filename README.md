@@ -94,7 +94,7 @@ Open each notebook file and run the cells sequentially.
 - max_depth ∈ {2, 3}
 - subsample ∈ {0.8, 1.0}
 
-  ## Hyperparameter Search Space
+   * Hyperparameter Search Space
 
 | Hyperparameter    | Values Tested | Rationale |
 |------------------|--------------|-----------|
