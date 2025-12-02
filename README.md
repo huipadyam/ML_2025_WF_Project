@@ -77,14 +77,14 @@ Open each notebook file and run the cells sequentially.
 * `Gradient_Boosting.ipynb`
 
 1. **Load and preprocess data**
-  * Merge monitored + unmonitored traffic datasets
-  * Extract 19 statistical traffic features
-  * Apply StandardScaler
-  * Stratified train/test split
+   * Merge monitored + unmonitored traffic datasets
+   * Extract 19 statistical traffic features
+   * Apply StandardScaler
+   * Stratified train/test split
 
 2. **Closed-world Experiment (95-class classification)**
-  * Model: GradientBoostingClassifier
-  * Task: Predict which website among 95 monitored sites
+   * Model: GradientBoostingClassifier
+   * Task: Predict which website among 95 monitored sites
 
 - GridSearchCV (3-fold):
 - n_estimators ∈ {100, 200}
@@ -92,22 +92,22 @@ Open each notebook file and run the cells sequentially.
 - max_depth ∈ {2, 3}
 - subsample ∈ {0.8, 1.0}
 
-  * Metrics: Accuracy (baseline vs tuned)
-  * Result: Gradient Boosting is not suitable for 95-class website fingerprinting
+   * Metrics: Accuracy (baseline vs tuned)
+   * Result: Gradient Boosting is not suitable for 95-class website fingerprinting
     Hyperparameters do not fix structural limitations
 
 3. **Open-world Experiment (Binary: Monitored vs Unmonitored)**
-  * Same feature preprocessing
-  * Train Gradient Boosting to classify: 1 → Monitored, 0 → Unmonitored
+   * Same feature preprocessing
+   * Train Gradient Boosting to classify: 1 → Monitored, 0 → Unmonitored
 
-  * Report: Precision / Recall / F1, ROC-AUC, Confusion matrix
-  * Result: Near-perfect detection, False positives and false negatives extremely low
+   * Report: Precision / Recall / F1, ROC-AUC, Confusion matrix
+   * Result: Near-perfect detection, False positives and false negatives extremely low
 
 4. **Feature Interpretation (SHAP + Feature Importance)**
-  * Identify key features the GB model relies on: Burst counts, Cumulative packet size (cum_abs_sum), Timing statistics
-  * SHAP is executed only for open-world because the multi-class closed-world SHAP support is limited
+   * Identify key features the GB model relies on: Burst counts, Cumulative packet size (cum_abs_sum), Timing statistics
+   * SHAP is executed only for open-world because the multi-class closed-world SHAP support is limited
 
-  * Insight: Binary monitored/unmonitored separation is highly driven by burst + packet volume signals
+   * Insight: Binary monitored/unmonitored separation is highly driven by burst + packet volume signals
              These features are easily separable → explains high open-world accuracy
 
 ---
