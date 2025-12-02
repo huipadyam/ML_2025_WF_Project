@@ -76,6 +76,8 @@ Open each notebook file and run the cells sequentially.
 
 * `Gradient_Boosting.ipynb`
 
+* We selected Gradient Boosting as our primary model because it is a robust tree-based ensemble method capable of capturing nonlinear relationships within network traffic features. Unlike linear models or distance-based classifiers, Gradient Boosting incrementally corrects errors using a sequence of weak decision trees, making it well-suited for noisy, real-world packet patterns. Its strong generalization ability and interpretability (via feature importance and SHAP analysis) also make it an appropriate choice for our monitored-site detection task.
+
 1. **Load and preprocess data**
    * Merge monitored + unmonitored traffic datasets
    * Extract 19 statistical traffic features
@@ -91,6 +93,14 @@ Open each notebook file and run the cells sequentially.
 - learning_rate ∈ {0.05, 0.1}
 - max_depth ∈ {2, 3}
 - subsample ∈ {0.8, 1.0}
+
+  | Hyperparameter    | Values Tested | Rationale                                                                          |
+| ----------------- | ------------- | ---------------------------------------------------------------------------------- |
+| **n_estimators**  | 100, 200      | Controls model capacity; 100–300 is typically optimal in boosting literature.      |
+| **learning_rate** | 0.05, 0.1     | Balances underfitting vs. overfitting; these ranges yield stable convergence.      |
+| **max_depth**     | 2, 3          | Shallow trees generalize better in boosting frameworks.                            |
+| **subsample**     | 0.8, 1.0      | 0.8 introduces stochasticity and reduces variance; compared against full sampling. |
+
 
    * Metrics: Accuracy (baseline vs tuned)
    * Result: Gradient Boosting is not suitable for 95-class website fingerprinting
