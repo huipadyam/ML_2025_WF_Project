@@ -94,12 +94,15 @@ Open each notebook file and run the cells sequentially.
 - max_depth ∈ {2, 3}
 - subsample ∈ {0.8, 1.0}
 
-  | Hyperparameter    | Values Tested | Rationale                                                                          |
-| ----------------- | ------------- | ---------------------------------------------------------------------------------- |
-| **n_estimators**  | 100, 200      | Controls model capacity; 100–300 is typically optimal in boosting literature.      |
-| **learning_rate** | 0.05, 0.1     | Balances underfitting vs. overfitting; these ranges yield stable convergence.      |
-| **max_depth**     | 2, 3          | Shallow trees generalize better in boosting frameworks.                            |
-| **subsample**     | 0.8, 1.0      | 0.8 introduces stochasticity and reduces variance; compared against full sampling. |
+  ## Hyperparameter Search Space
+
+| Hyperparameter    | Values Tested | Rationale |
+|------------------|--------------|-----------|
+| **n_estimators**  | 100, 200      | Controls model capacity; 100–300 is commonly effective in boosting literature. |
+| **learning_rate** | 0.05, 0.1     | Balances underfitting vs. overfitting; these values provide stable convergence. |
+| **max_depth**     | 2, 3          | Shallow trees help prevent overfitting and generalize better in boosting. |
+| **subsample**     | 0.8, 1.0      | 0.8 adds helpful stochasticity to reduce variance; compared against full sampling. |
+
 
 
    * Metrics: Accuracy (baseline vs tuned)
