@@ -73,16 +73,22 @@ Open each notebook file and run the cells sequentially.
 * `RandomForest.ipynb`
 
 1. **Load and preprocess data**
+
 2. **Extract 19 features**
+   
 3. **Closed-world RandomForest experiment**
    * Hyperparameter Tuning - n_estimators, max_features, max_depth
+
 4. **Feature Importance Analysis (Closed-world)**
    * Compute feature importance for the Closed-world experiment
+
 5. **Open-world RandomForest experiment (Binary Classification)**
    * Set class_weight='balanced' to prevent bias toward the majority class (unmonitored) for the model training
+
 6. **Open-world RandomForest experiment (Multi-class Classification)**
    * Data Preparation for Multi-class classification in Open-world
    * Set class_weight='balanced' to prevent bias toward the majority class (unmonitored) for the model training
+
 7. **Feature Importance Analysis (Open-world)**
    * Compute feature importance for the Open-world experiment
 
