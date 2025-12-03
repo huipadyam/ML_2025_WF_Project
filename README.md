@@ -44,7 +44,36 @@ Open each notebook file and run the cells sequentially.
 
 ### **Decision Tree Experiment Scenario**
 
-(filename, execution instructions, and code workflow summary — handled by Minsu)
+* `DecisionTree.ipynb`
+
+1. **Load and preprocess data**
+   * Download monitored, unmonitored datasets
+
+2. **Extract 19 features**
+   
+3. **Closed-world Decision Tree experiment (95-class)**
+    * criterion = "entropy"
+    * max_depth = 70
+    * class_weight = "balanced"
+    * Evaluate Accuracy / Macro-F1
+
+4. **Open-world Decision Tree experiment (Binary Classification)**
+   * monitored = 1 / unmonitored = 0
+   * max_depth = 50
+   * class_weight = "balanced"
+   * Evaluate Precision / Recall / ROC-AUC / Balanced Accuracy
+   * Plot ROC / PR curves & Confusion Matrix
+
+5. **Open-world Decision Tree experiment (Multi-class Classification)**
+   * monitored classes = 0~94
+   * unmonitored = -1
+   * Evaluate Accuracy / Macro-F1
+   * Multi-class Confusion Matrix
+
+6. **Result Explanation**
+   * Compare three accuracy
+   * plot Top-k feature selection performance for closed world
+   * plot top feature importance for three experiment
 
 ### **SVM Open-world Experiment Scenarios**
 
