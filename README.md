@@ -75,7 +75,7 @@ Open each notebook file and run the cells sequentially.
    * plot Top-k feature selection performance for closed world
    * plot top feature importance for three experiment
 
-### **SVM Open-world Experiment Scenarios**
+### **SVM Experiment Scenarios**
 
 * `SVM_1to5.ipynb`
 * `SVM_1to10.ipynb`
